@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_API_BASE ||
   process.env.BACKEND_URL ||
-  'https://smartpost-backend-786852619137.us-central1.run.app'
+  'https://smartpost-backend.onrender.com'
 
 export async function GET(
   request: NextRequest,
