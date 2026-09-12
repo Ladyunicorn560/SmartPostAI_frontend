@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: var(--font-jakarta);
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 174 12% 98.5%;
+    --foreground: 174 40% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 174 40% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 174 40% 12%;
+    /* Primary: Teal */
+    --primary: 174 61% 38%;
+    --primary-foreground: 0 0% 100%;
+    /* Secondary: Muted teal-gray */
+    --secondary: 174 25% 92%;
+    --secondary-foreground: 174 40% 20%;
+    /* Tertiary: Complementary coral/amber accent */
+    --tertiary: 24 95% 53%;
+    --tertiary-foreground: 0 0% 100%;
+    /* Hover: Light teal */
+    --hover-bg: 174 45% 95%;
+    --muted: 174 20% 95%;
+    --muted-foreground: 174 15% 42%;
+    --accent: 174 45% 94%;
+    --accent-foreground: 174 61% 28%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 174 20% 90%;
+    --input: 174 20% 90%;
+    --ring: 174 61% 38%;
+    --chart-1: 174 61% 45%;
+    --chart-2: 187 55% 42%;
+    --chart-3: 24 95% 53%;
+    --chart-4: 160 55% 40%;
+    --chart-5: 174 50% 55%;
+    --code-color-1: 174 61% 45%;
+    --code-color-2: 24 95% 53%;
+    --accent-teal: 174 61% 45%;
+    --accent-coral: 24 95% 53%;
+  }
+
+  .dark {
+    --background: 174 30% 6%;
+    --foreground: 174 15% 95%;
+    --card: 174 25% 9%;
+    --card-foreground: 174 15% 95%;
+    --popover: 174 25% 9%;
+    --popover-foreground: 174 15% 95%;
+    /* Primary: Lighter teal for dark mode */
+    --primary: 174 55% 50%;
+    --primary-foreground: 174 40% 8%;
+    /* Secondary: Dark teal-gray */
+    --secondary: 174 25% 18%;
+    --secondary-foreground: 174 15% 88%;
+    /* Tertiary: Softer coral for dark mode */
+    --tertiary: 24 90% 58%;
+    --tertiary-foreground: 0 0% 100%;
+    /* Hover: Dark teal */
+    --hover-bg: 174 35% 18%;
+    --muted: 174 20% 14%;
+    --muted-foreground: 174 15% 60%;
+    --accent: 174 35% 16%;
+    --accent-foreground: 174 55% 65%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 174 25% 18%;
+    --input: 174 25% 18%;
+    --ring: 174 55% 50%;
+    --chart-1: 174 55% 55%;
+    --chart-2: 187 50% 52%;
+    --chart-3: 24 90% 60%;
+    --chart-4: 160 50% 50%;
+    --chart-5: 174 45% 62%;
+    --code-color-1: 174 55% 55%;
+    --code-color-2: 24 90% 60%;
+    --accent-teal: 174 55% 55%;
+    --accent-coral: 24 90% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+/* SVG Animation Styles */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
