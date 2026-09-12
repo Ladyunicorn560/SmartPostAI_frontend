@@ -1,22 +1,9 @@
 import axios from 'axios'
 import { tokenStore } from './token-store'
 
-// Get API base URL
-// In production (HTTPS), use Next.js API proxy to avoid Mixed Content errors
-// In development, use backend directly
+// Get API base URL directly (both frontend and backend use HTTPS, CORS enabled on backend)
 function getApiBaseUrl(): string {
-  // In browser (client-side)
-  if (typeof window !== 'undefined') {
-    // Production (HTTPS) - use proxy to avoid Mixed Content
-    if (window.location.protocol === 'https:') {
-      return '/api/proxy'
-    }
-    // Development - use backend directly
-    return process.env.NEXT_PUBLIC_API_BASE || 'https://smartpost-backend.onrender.com'
-  }
-  
-  // Server-side - use backend directly
-  return process.env.NEXT_PUBLIC_API_BASE || process.env.BACKEND_URL || 'https://smartpost-backend.onrender.com'
+  return process.env.NEXT_PUBLIC_API_BASE || 'https://smartpost-backend.onrender.com'
 }
 
 const api = axios.create({ 
@@ -44,4 +31,3 @@ api.interceptors.response.use(
 )
 
 export default api
-
